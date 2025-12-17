@@ -877,3 +877,48 @@ main h2 {
   width: 24px;
   margin-left: 10px;
 }
+
+/* --- Estilos generales (pantallas grandes) --- */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Estilos responsivos (pantallas pequeñas) --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Texto más pequeño en móvil */
+    padding: 10px;
+  }
+
+  .contenedor {
+    flex-direction: column; /* Cambia de fila a columna en móvil */
+    gap: 10px;
+  }
+
+  header, footer {
+    text-align: center; /* Centra encabezado y pie en móvil */
+  }
+
+  nav ul {
+    flex-direction: column; /* Menú vertical en móvil */
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+}
