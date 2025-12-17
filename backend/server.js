@@ -7,11 +7,11 @@ app.use(cors());
 app.use(express.json());
 
 // Servir frontend desde carpeta public
-app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "..", "docs")));
 
 // Ruta principal: servir index.html
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "docs", "index.html"));
 });
 
 // 2. Menú 
