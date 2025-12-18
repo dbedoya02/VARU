@@ -516,7 +516,7 @@ main h2 {
 .contenido h5{
   font-size: 32px;
   color:#000000d5;
-  margin-top: 30px;
+  margin-top: 15px;
   
 }
 .contenido img{
@@ -877,9 +877,9 @@ main h2 {
   width: 24px;
   margin-left: 10px;
 }
-/* ============================= */
+
 /* ======== MOBILE FIX ========= */
-/* ============================= */
+
 @media (max-width: 768px) {
 
   /* 🔒 1. Evitar desbordes */
@@ -900,11 +900,13 @@ main h2 {
 
   #milogo {
     width: 220px;
+    top: -35px;
   }
 
   .subtitulo-logo span {
-    margin-top: 0;
+    top:  20px;
     font-size: 14px;
+  
   }
 
   .subtitulo-logo span::before,
@@ -926,7 +928,7 @@ main h2 {
   .boxes {
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: -15px;
   }
 
   .box {
@@ -944,16 +946,17 @@ main h2 {
 
   /* 🔹 6. INTRO */
   .intro {
-    flex-direction: column;
+    flex-direction: flex ;
     text-align: center;
+    left: 10px;
   }
 
   .intro h2 {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .intro img {
-    width: 220px;
+    width: 100px;
   }
 
   /* 🔹 7. SECCIONES CON ABSOLUTE (CLAVE) */
@@ -963,10 +966,12 @@ main h2 {
     margin: 30px auto 0;
     width: 90%;
     max-width: 320px;
+    
   }
 
   .medio {
     margin-top: 80px;
+
   }
 
   .mediap {
@@ -998,13 +1003,14 @@ main h2 {
   .contenido3 .btn-agregar {
     position: static;
     margin-top: 15px;
+    align-items: center;
   }
 
   /* 🔹 9. CTA */
   .baja {
-    margin-top: 100px;
+    margin-top: 80px;
     text-align: center;
-    padding: 40px 20px;
+    padding: 0px 16px;
   }
 
   .baja h3 {
@@ -1019,8 +1025,9 @@ main h2 {
   .footer {
     grid-template-columns: 1fr;
     text-align: center;
+  
   }
-
+  
   .footer-social {
     grid-column: span 1;
     text-align: center;
