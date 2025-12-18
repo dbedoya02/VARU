@@ -879,33 +879,43 @@ main h2 {
 }
 @media (max-width: 768px) {
 
-  /* 🔴 FORZAR QUE NO HAYA SCROLL HORIZONTAL */
+  /* 1️⃣ Cortar cualquier desborde */
+  * {
+    max-width: 100%;
+  }
+
   html, body {
     overflow-x: hidden;
   }
 
-  /* 🔴 CONTENEDORES: columna */
+  /* 2️⃣ Resetear contenedores */
   .contenedor-cajas,
   .boxes {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 0;
     gap: 20px;
+
+    margin: 0;
+    padding: 0 16px;
   }
 
-  /* 🔴 CAJAS: sacar del absolute */
+  /* 3️⃣ RESET TOTAL de las cajas */
   .mediap .caje,
   .medio .caja {
-    position: relative;   /* NO static, para evitar bugs */
-    top: auto;
-    left: auto;
-    right: auto;
+    position: static !important;
+
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+
+    margin: 0 !important;
 
     width: 100%;
     max-width: 320px;
-    margin: 0 auto;
 
-    transform: none;      /* por si usas translate */
+    transform: none !important;
   }
 
 }
