@@ -877,48 +877,152 @@ main h2 {
   width: 24px;
   margin-left: 10px;
 }
+/* ============================= */
+/* ======== MOBILE FIX ========= */
+/* ============================= */
 @media (max-width: 768px) {
 
-  /* 1️⃣ Cortar cualquier desborde */
-  * {
-    max-width: 100%;
-  }
-
+  /* 🔒 1. Evitar desbordes */
   html, body {
     overflow-x: hidden;
   }
 
-  /* 2️⃣ Resetear contenedores */
-  .contenedor-cajas,
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* 🔹 2. HERO */
+  .hero {
+    min-height: 300px;
+    padding-top: 60px;
+  }
+
+  #milogo {
+    width: 220px;
+  }
+
+  .subtitulo-logo span {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .subtitulo-logo span::before,
+  .subtitulo-logo span::after {
+    width: 50px;
+  }
+
+  /* 🔹 3. NAV */
+  nav {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  nav a:not(:last-child)::after {
+    display: none;
+  }
+
+  /* 🔹 4. SERVICIOS */
   .boxes {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-
-    margin: 0;
-    padding: 0 16px;
+    margin-top: 20px;
   }
 
-  /* 3️⃣ RESET TOTAL de las cajas */
-  .mediap .caje,
-  .medio .caja {
-    position: static !important;
-
-    top: unset !important;
-    left: unset !important;
-    right: unset !important;
-    bottom: unset !important;
-
-    margin: 0 !important;
-
-    width: 100%;
+  .box {
+    width: 90%;
     max-width: 320px;
-
-    transform: none !important;
   }
 
+  /* 🔹 5. Imagen decorativa */
+  .imgbrus {
+    position: static;
+    width: 200px;
+    margin: 40px auto 0;
+    display: block;
+  }
+
+  /* 🔹 6. INTRO */
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro h2 {
+    font-size: 22px;
+  }
+
+  .intro img {
+    width: 220px;
+  }
+
+  /* 🔹 7. SECCIONES CON ABSOLUTE (CLAVE) */
+  .medio .caja,
+  .mediap .caje {
+    position: static;
+    margin: 30px auto 0;
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .medio {
+    margin-top: 80px;
+  }
+
+  .mediap {
+    margin-top: 80px;
+  }
+
+  /* 🔹 8. PRODUCTOS */
+  .contenedor-cajas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contenido,
+  .contenido2,
+  .contenido3 {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .contenido img,
+  .contenido2 img,
+  .contenido3 img {
+    width: 100%;
+  }
+
+  .contenido .btn-agregar,
+  .contenido2 .btn-agregar,
+  .contenido3 .btn-agregar {
+    position: static;
+    margin-top: 15px;
+  }
+
+  /* 🔹 9. CTA */
+  .baja {
+    margin-top: 100px;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .baja h3 {
+    font-size: 22px;
+  }
+
+  .baja h4 {
+    font-size: 16px;
+  }
+
+  /* 🔹 10. FOOTER */
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-social {
+    grid-column: span 1;
+    text-align: center;
+  }
 }
-
-
-
