@@ -878,4 +878,19 @@ main h2 {
   margin-left: 10px;
 }
 
+@media (max-width: 768px) {
+
+  .mediap .caje,
+  .medio .caja {
+    position: static;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 20px;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+
+}
+
 
