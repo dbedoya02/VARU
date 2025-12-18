@@ -877,25 +877,37 @@ main h2 {
   width: 24px;
   margin-left: 10px;
 }
-
 @media (max-width: 768px) {
 
+  /* 🔴 FORZAR QUE NO HAYA SCROLL HORIZONTAL */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* 🔴 CONTENEDORES: columna */
+  .contenedor-cajas,
+  .boxes {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    gap: 20px;
+  }
+
+  /* 🔴 CAJAS: sacar del absolute */
   .mediap .caje,
   .medio .caja {
-    position: static;
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto 20px;
+    position: relative;   /* NO static, para evitar bugs */
     top: auto;
     left: auto;
     right: auto;
+
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+
+    transform: none;      /* por si usas translate */
   }
 
-}
-@media (max-width: 768px) {
-  body {
-    background: red !important;
-  }
 }
 
 
