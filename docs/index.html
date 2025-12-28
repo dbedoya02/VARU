@@ -6,29 +6,41 @@
   <title>VARU Bistro-Catering</title>
   <link rel="stylesheet"  href="styles.css">
 </head>
-<body>
+<div>
 
   <div class="top-bar">
   <img src="imagenes/login-removebg-preview.png" class="login">
   <button id="btnAgregar">Añade al carrito</button>
   <img src="imagenes/carrito-removebg-preview.png" class="icono">
-    
+
 </div>
 
+  <button id="toggleBtn" class="toggle-btn">▲</button>
+
   <header>
-  
-  <nav>
-  <a href="#">Inicio</a>
-  <a href="#">Menú</a>
-  <a href="#">Pedidos</a>
-  <a href="#"id="contactNav">Contacto</a>
+
+  <nav class="nav">
+    <div class="dropdown">
+  <a href="javascript:void(0)" onclick="abrirVentana('ventana-inicio')">Inicio</a>
+    <div class="submenu">
+      <a href="javascript:void(0)" onclick="abrirVentana('ventana-inicio')">Nosotros</a><br>
+      <a href="javascript:void(0)" onclick="abrirVentana('ventana-inicio')">Misión</a><br>
+      <a href="javascript:void(0)" onclick="abrirVentana('ventana-inicio')">Visión</a><br>
+    </div>
+    </div>
+  <a href="javascript:void(0)" onclick="abrirVentana('ventana-menu')">Menu</a>
+  <a href="javascript:void(0)" onclick="abrirVentana('ventana-pedidos')">Pedidos</a>
+  <a id="contactNav">Contacto</a>
+   
+  </nav>
 
 
 
 </header>
-
-<div class="imagen-logo">
-  <section class="hero">
+<div id="contenido-central">
+   <div id="home">
+    <div class="imagen-logo">
+    <section class="hero">
     <!-- Logo y subtítulo ahora dentro del hero -->
     <img src="imagenes/logo.png" alt="logo" width="400" height="auto" id="milogo">
 
@@ -40,6 +52,7 @@
 
 
   <main>
+    
     <div class="boxes">
     <div class="box box1">
     <h1>Empresarial</h1>
@@ -73,7 +86,7 @@
 </div>
 
 <div class="intro">
-<h2>En VARU, nos comprometemos a hacer de cada evento una ocasión única e inolvidable, con la pasión, profesionalismo y creatividad que nos caracteriza.</h2>
+<h2>En <strong>VARU</strong>, nos comprometemos a hacer de cada evento una ocasión única e inolvidable, con la pasión, profesionalismo y creatividad que nos caracteriza.</h2>
 <img src="imagenes/logo intro.png" alt="plato logo">
 </div>
 
@@ -90,33 +103,62 @@
 
 <div class="titulo">
   <h3>PRODUCTOS DESTACADOS</h3>
+  <hr>
 </div>
 <div class="contenedor-cajas">
 <div class="contenido">
-      <img src="imagenes/lasagna.png" alt="lasagna">
-    <h2>Lasagnas</h2>
-    <h4>Bolognesa</h4>
-    <h4>Alfredo con pollo</h4>
-    <h4>Duo de carnes</h4>
-    <h5>$19.990</h5>
-    <button class="btn-agregar">Agregar</button>
+    <img src="imagenes/lasagna.png" alt="lasagna">
+      <h2>Lasagnas</h2>
+    <form class="elegir1">
+      <label class="opcion">
+        <input type="radio" name="lasagna" value="bolognesa">
+        <span>Bolognesa</span>
+      </label>
+      <label class="opcion">
+        <input type="radio" name="lasagna" value="Alfredo">
+        <span>Alfredo con pollo</span>
+        </label>
+        <label class="opcion">
+        <input type="radio" name="lasagna" value="duo">
+        <span>Duo de carnes</span>
+      </label>      
+      <h5>$19.990</h5>
+      <button class="btn-agregar">Agregar</button>
+    </form>
 </div>
 
 <div class="contenido2">
     <img src="imagenes/paella.png" alt="paella">
     <h2>Paellas</h2>
-    <h4>Mar y Tierra</h4>
-    <h4>Mariscos</h4>
-    
+    <form class="elegir2">
+      <label class="opcion1">
+        <input type="radio" name="paellas" value="marytierra">
+        <span>Mar y Tierra</span>
+      </label>
+      <label class="opcion1">
+        <input type="radio" name="paellas" value="mar">
+        <span>Mariscos</span>
+        </label>
     <h5>$45.990</h5>
     <button class="btn-agregar">Agregar</button>
+    </form>
 </div>
 <div class="contenido3">
-    <img src="imagenes/bowl.png" alt="bowl">
+    <img src="imagenes/bowl.png" alt="bowls">
     <h2>Bowls</h2>
-    <h4>Curry de cerdo</h4>
-    <h4>Lomito de cerdo teriyaki</h4>
-    <h4>Veggie-Veggie</h4>
+    <form class="elegir3">
+      <label class="opcion2">
+        <input type="radio" name="bowls" value="curry">
+        <span>Curry de cerdo</span>
+      </label>
+      <label class="opcion2">
+        <input type="radio" name="bowls" value="lomito">
+        <span>Lomito de cerdo teriyaki</span>
+        </label>
+      <label class="opcion3">
+        <input type="radio" name="bowls" value="veggie">
+        <span>Veggie-Veggie</span>
+        </label>
     <h5>$25.990</h5>
     <button class="btn-agregar">Agregar</button>
 </div>
@@ -135,8 +177,32 @@
     <h4>Un asesor te ayudará a construir el evento que necesitas</h4>
     <button class="btnbaja">Contáctanos</button>
   </div>
+</div>
 </section>
-  
+<div id="ventanas">
+
+  <section id="ventana-inicio" class="ventana">
+    <h1>Bienvenidos a VARU</h1>
+    <p>Quiénes somos, misión, visión...</p>
+  </section>
+
+  <section id="ventana-menu" class="ventana">
+    <h1>Nuestro Menú</h1>
+    <p>Aquí irá el menú</p>
+  </section>
+
+  <section id="ventana-pedidos" class="ventana">
+    <h1>Pedidos</h1>
+    <p>Gestión de pedidos</p>
+  </section>
+
+  <section id="ventana-contacto" class="ventana">
+    <h1>Contacto</h1>
+    <p>Formulario o info de contacto</p>
+  </section>
+
+</div>
+
 <footer class="footer">
   <div class="footer-col">
     <h3>VARU Bistro-Catering</h3>
@@ -166,19 +232,38 @@
   <div class="footer-col">
     <h3>Infórmate</h3>
     <p>Mantente informado de todas las sorpresas de VARU Bistro-Catering</p>
-    <input type="email" placeholder="Escribe tu correo electrónico">
-    <div class="captcha">
-      <input type="checkbox" id="captcha">
-      <label for="captcha">No soy un robot</label>
-    </div>
+    <form action="enviar-respuesta">
+      <input type="email" placeholder="Escribe tu correo electrónico" required>
+   <div class="captcha-box">
+  <label class="captcha-content">
+    <input type="checkbox" id="captcha">
+    <span>No soy un robot</span>
+  </label>
+
+  <div class="captcha-logo">
+    <small>reCAPTCHA</small>
   </div>
+</div>
+      <button type="submit">SUSCRIBIRME</button>
+  
+  <small class="privacy-text">
+    Al suscribirte aceptas nuestra
+    <a href="politica-privacidad.html" target="_blank">
+      Política de privacidad
+    </a>.
+  </small>
+    </div>
+    </form>
+  </div>
+  
 
   <div class="footer-social">
     <p>Síguenos en:</p>
     <a href="#"><img src="imagenes/facebook.png" alt="Facebook"></a>
-    <a href="#"><img src="imagenes/instagram.png" alt="Instagram"></a>
+    <a href="https:/www.instagram.com/varubistrocatering" target="_blank" rel="noopener noreferrer"><img src="imagenes/instagram.png" alt="Instagram"></a>
   </div>
 </footer>
   <script src="script.js"></script>
 </body>
+
 </html>

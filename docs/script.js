@@ -42,7 +42,7 @@ if (btnAgregar) {
 }
 
 // --- LOGO: CAMBIO DE COLOR (clic permanente) ---
-const logo = document.getElementById('miLogo');
+const logo = document.getElementById('milogo'); // ojo que el id es milogo
 if (logo) {
   logo.addEventListener('click', () => {
     logo.classList.toggle('color-clic');
@@ -54,14 +54,77 @@ async function cargarMenu() {
   try {
     const resp = await fetch("http://localhost:3000/menu");
     const platos = await resp.json();
-
     console.log("Menú recibido del backend:", platos);
-
-    // Aquí puedes mostrarlo en pantalla (cuando tengas contenedor)
-    // Ej: document.getElementById("menu").innerHTML = ...
   } catch (error) {
     console.log("Error cargando menú:", error);
   }
 }
-
 cargarMenu();
+
+// --- TOP BAR TOGGLE ---
+const topBar = document.querySelector('.top-bar');
+const toggleBtn = document.getElementById('toggleBtn');
+let isHidden = false;
+const fullHeight = topBar.scrollHeight + "px";
+
+toggleBtn.addEventListener('click', () => {
+  if (!isHidden) {
+    topBar.style.height = "0";
+    topBar.style.padding = "0";
+    toggleBtn.textContent = "▼";
+    isHidden = true;
+  } else {
+    topBar.style.height = fullHeight;
+    topBar.style.padding = "10px";
+    toggleBtn.textContent = "▲";
+    isHidden = false;
+  }
+});
+
+// --- HOME Y VENTANAS ---
+const home = document.getElementById("home");
+const ventanas = document.querySelectorAll("#ventanas .ventana");
+
+// Mostrar Home
+function mostrarHome(guardarHistorial = true) {
+  home.style.display = "block";
+  ventanas.forEach(v => v.style.display = "none");
+
+  if (guardarHistorial) {
+    history.pushState({ vista: "home" }, "", "");
+  }
+}
+
+// Abrir ventana
+function abrirVentana(id, guardarHistorial = true) {
+  home.style.display = "none";
+  ventanas.forEach(v => v.style.display = "none");
+
+  const v = document.getElementById(id);
+  if (v) v.style.display = "block";
+
+  if (guardarHistorial) {
+    history.pushState({ vista: id }, "", "#" + id);
+  }
+}
+
+// Historial (atrás/adelante)
+window.onpopstate = function(event) {
+  if (!event.state) return;
+  if (event.state.vista === "home") mostrarHome(false);
+  else abrirVentana(event.state.vista, false);
+}
+
+// Carga inicial
+window.addEventListener("load", () => {
+  if (location.hash) abrirVentana(location.hash.replace("#", ""), false);
+  else {
+    history.replaceState({ vista: "home" }, "", "");
+    mostrarHome(false);
+  }
+});
+
+// Botón contacto
+document.getElementById("contactNav").addEventListener("click", () => {
+  abrirVentana("ventana-contacto", true);
+});
