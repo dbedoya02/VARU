@@ -1134,6 +1134,7 @@ button[type="submit"]:hover {
 .footer-social img {
   width: 24px;
   margin-left: 10px;
+  
 }
 
 .privacy-text {
@@ -1156,6 +1157,7 @@ button[type="submit"]:hover {
   html, body {
     overflow-x: hidden;
   }
+  
 
   img {
     max-width: 100%;
@@ -1367,6 +1369,18 @@ button[type="submit"]:hover {
     display: inline-block;
     margin-top: 4px;
   }
+  .home-contenedor {
+    margin-left: -10px;
+  }
 
-    
+  /* Grupo derecho (botón + iconos) */
+  .top-right {
+    margin-right: -35px;
+  }
+  .login{
+    margin-right: -15px;
+  }  
+  .icono{
+    margin-left: -5px;
+  }
  }
