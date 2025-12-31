@@ -7,7 +7,7 @@ body {
 
 
 .hero {
-  background-image: url('imagenes/fondo header.png');
+  background-image: url('../imagenes/fondo header.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -126,6 +126,85 @@ body {
   filter: brightness(0) invert(0.6) sepia(1) saturate(5) hue-rotate(10deg);
   /* Se vuelve naranja-dorado sin cambiar la imagen */
 }
+.home-contenedor {
+  display: flex;
+  align-items: center;
+  top: 50%;
+  left: 30px;
+  position: absolute;
+  transform: translateY(-50%);
+  
+}
+.top-left,
+.top-right {
+  display: flex;
+  align-items: center;
+  
+}
+
+
+.home {
+  display: flex;
+  color: #ff7e7e;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-right: 10px;
+  justify-content: center;
+  white-space: nowrap;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+.lema {
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-top: 0;               
+  line-height: 1;   
+  color: #ffffff;           
+}
+
+
+
+.home-fecha {
+  display: flex;
+  align-items: center;
+  padding-left: 1px;
+}
+
+.fecha-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  border-left: 2px solid #fff;
+  padding-left: 5px;
+}
+
+
+.fecha-numero {
+  font-size: 28px;
+  font-family:"Playfair Display", serif;
+  line-height: 0,7;
+
+  
+}
+.texto-fecha {
+  font-size: 8px;
+  letter-spacing: 1px;
+  padding-top: 3px;
+}
+
+.home-link {
+  text-decoration: none;
+  color: inherit;
+ 
+}
+
+.home-link:hover {
+  cursor: pointer;
+  
+}
+
 
 
 .imagen-logo{
@@ -519,7 +598,7 @@ main h2 {
 .medio {
   width: 100%;
   min-height: 400px;
-  background-image: url('imagenes/plato3.jpg'); 
+  background-image: url('../imagenes/plato3.jpg'); 
   background-size: cover;            
   background-position: center;       
   background-repeat: no-repeat;
@@ -828,7 +907,7 @@ input[type="radio"] {
 .mediap {
   width: 100%;
   min-height: 400px;
-  background-image: url('imagenes/surtido-de-pintxos-espanoles-en-mesa-de-madera-comida-tipica-espanola.jpg'); 
+  background-image: url('../imagenes/surtido-de-pintxos-espanoles-en-mesa-de-madera-comida-tipica-espanola.jpg'); 
   background-size: cover;            
   background-position: center;       
   background-repeat: no-repeat;
@@ -898,7 +977,7 @@ input[type="radio"] {
 .baja {
   width: 100%;
   min-height: 400px;
-  background-image: url('imagenes/baja.png'); 
+  background-image: url('../imagenes/baja.png'); 
   background-size: cover;            
   background-position: center;       
   background-repeat: no-repeat;
